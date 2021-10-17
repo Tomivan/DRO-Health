@@ -3,5 +3,5 @@ export default interface BookData {
     name: string,
     isbn: string,
     authors: string,
-    endDate: string
+    released: string
 }

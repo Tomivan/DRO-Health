@@ -27,8 +27,28 @@ const Books: React.FC = () => {
     }
     return(
         <div>
-            {books && books.map( data => (
-                <p>{data.authors}</p>))}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Publisher</th>
+                        <th>Name</th>
+                        <th>ISBN</th>
+                        <th>Authors</th>
+                        <th>End Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {books && books.map( data => (
+                        <tr>
+                            <td>{data.publisher}</td>
+                            <td>{data.name}</td>
+                            <td>{data.isbn}</td>
+                            <td>{data.authors}</td>
+                            <td>{data.released}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     )
 }
