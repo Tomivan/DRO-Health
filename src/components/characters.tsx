@@ -11,7 +11,7 @@ const Characters: React.FC = () => {
         retrieveCharacters();
     }, [])
 
-    const onChangeSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const query = e.target.value;
         setQuery(query);
     }
@@ -41,6 +41,11 @@ const Characters: React.FC = () => {
 
     return(
         <div>
+            <form className="form">
+            <input type="text" className="query" placeholder="Search by author, name, isbn etc" 
+            value={query} onChange={(e) => setQuery(e.target.value)}/>
+            <button type="submit" className="button"> Search</button>
+            </form>
             <table>
                 <thead>
                     <tr>
